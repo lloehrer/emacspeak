@@ -241,7 +241,8 @@ Do not set this by hand;
 (defun emacspeak-play-auditory-icon (sound-name)
   "Produce auditory icon SOUND-NAME."
   (declare (special emacspeak-play-program emacspeak-play-args))
-  (let ((process-connection-type nil))
+  (let ((process-connection-type nil)
+		(default-directory emacspeak-directory))
     (if emacspeak-play-args
         (start-process
          emacspeak-play-program nil emacspeak-play-program
